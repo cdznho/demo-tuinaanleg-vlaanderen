@@ -3,36 +3,343 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tuinaanleg / buitenrenovatie | Demo Vlaanderen</title>
-  <meta name="description" content="Fictieve demo voor Tuinaanleg / buitenrenovatie in Vlaanderen.">
+  <title>Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow | Conversiegerichte website</title>
+  <meta name="description" content="Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek. SEO-structuur, bewijs, mobiele CTA en aanvraagflow voor Antwerpen, Waasland, Kempen en Vlaamse randgemeenten.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow">
+  <meta property="og:description" content="Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek.">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LandscapingBusiness", "name": "Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow", "areaServed": "Antwerpen, Waasland, Kempen en Vlaamse randgemeenten", "address": {"@type": "PostalAddress", "addressLocality": "Antwerpen", "addressCountry": "BE"}, "telephone": "+32 3 000 00 00", "url": "https://cdznho.github.io/demo-tuinaanleg-vlaanderen/", "description": "Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek.", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tuinaanleg / buitenrenovatie", "itemListElement": [{"@type": "Offer", "name": "Tuinontwerp"}, {"@type": "Offer", "name": "Terrassen"}, {"@type": "Offer", "name": "Opritten"}, {"@type": "Offer", "name": "Onderhoud"}]}}</script>
   <style>
-    body { margin:0; font-family: Arial, sans-serif; color:#16201b; background:#f7f4ef; }
-    header { padding:64px 8vw; background:#0f3d35; color:white; }
-    main { padding:48px 8vw; display:grid; gap:32px; }
-    section { max-width:960px; }
-    .cta { display:inline-block; padding:14px 18px; background:#d6a84f; color:#16201b; text-decoration:none; font-weight:700; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
-    .panel { background:white; padding:22px; border:1px solid #e6decf; }
+    :root {
+      --ink: #172417;
+      --muted: #667067;
+      --paper: #fffdf8;
+      --soft: #edf4e8;
+      --line: rgba(20, 27, 23, .12);
+      --accent: #5f8a4a;
+      --font-display: Georgia, "Times New Roman", serif;
+      --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family: var(--font-body); color:var(--ink); background:var(--paper); }
+    a { color: inherit; }
+    p { line-height:1.62; }
+    .site-nav { position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:14px clamp(18px,4vw,60px); background:rgba(255,253,248,.88); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .brand { font-family:var(--font-display); font-size:20px; font-weight:600; letter-spacing:-.01em; }
+    .nav-links { display:flex; gap:22px; align-items:center; font-size:14px; font-weight:550; }
+    .nav-links a { text-decoration:none; }
+    .nav-cta, .cta { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:13px 18px; background:var(--accent); color:white; border:1px solid transparent; text-decoration:none; font-weight:650; letter-spacing:.02em; border-radius:6px; box-shadow:0 16px 32px rgba(0,0,0,.14); }
+    .ghost { background:transparent; color:var(--ink); border-color:var(--line); box-shadow:none; }
+    .hero { min-height:88vh; display:grid; grid-template-columns:minmax(0,1.04fr) minmax(340px,.96fr); gap:clamp(32px,5vw,72px); align-items:center; padding:clamp(54px,8vw,112px) clamp(18px,5vw,72px) 48px; background:linear-gradient(90deg,var(--paper),var(--soft)); }
+    .hero h1 { max-width:850px; margin:0; font-family:var(--font-display); font-size:clamp(42px,6vw,76px); line-height:1.03; letter-spacing:-.025em; }
+    .hero-copy { max-width:700px; margin:24px 0 0; font-size:clamp(17px,2vw,21px); color:#39433d; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .proof-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:38px; max-width:760px; }
+    .proof-strip strong { display:block; font-family:var(--font-display); font-size:34px; letter-spacing:-.02em; }
+    .proof-strip span { color:var(--muted); font-size:13px; line-height:1.4; }
+    .site-visual { background:#111814; color:white; border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:18px; box-shadow:0 28px 80px rgba(17,24,20,.28); }
+    .browser-bar { display:flex; gap:6px; padding-bottom:14px; }
+    .browser-bar i { width:10px; height:10px; border-radius:50%; background:#f4c86a; }
+    .browser-bar i:first-child { background:#e86f5d; }
+    .browser-bar i:last-child { background:#77c78b; }
+    .before-after-slider { position:relative; min-height:420px; overflow:hidden; border-radius:6px; background:#f7f7f2; color:var(--ink); }
+    .site-pane { position:absolute; inset:0; padding:28px; display:grid; align-content:start; gap:18px; }
+    .site-pane.before { background:#e8e3da; color:#4d4a43; }
+    .site-pane.after { width:58%; overflow:hidden; background:white; border-right:3px solid var(--accent); }
+    .mini-line { height:12px; background:currentColor; opacity:.15; border-radius:999px; }
+    .mini-line.short { width:58%; }
+    .mini-card { padding:16px; background:rgba(255,255,255,.72); border:1px solid var(--line); border-radius:6px; }
+    .after .mini-card { background:var(--soft); }
+    .before .mini-card, .before .mini-line { margin-left:62%; width:32%; }
+    .before .mini-line.short { width:24%; }
+    .slider-control { position:absolute; left:18px; right:18px; bottom:18px; width:calc(100% - 36px); accent-color:var(--accent); }
+    main section { padding:clamp(58px,8vw,110px) clamp(18px,5vw,72px); }
+    .section-head { max-width:780px; margin-bottom:34px; }
+    .section-head h2 { margin:0; font-family:var(--font-display); font-size:clamp(32px,4vw,52px); line-height:1.08; letter-spacing:-.02em; }
+    .section-head p { color:var(--muted); font-size:18px; }
+    .services { background:white; }
+    .service-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+    .service-card { min-height:230px; padding:24px; border:1px solid var(--line); border-radius:8px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .service-card span { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:700; }
+    .service-card h3 { font-family:var(--font-display); font-size:25px; line-height:1.1; margin:42px 0 12px; letter-spacing:-.01em; }
+    .audit { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:32px; align-items:center; background:var(--ink); color:white; }
+    .audit .section-head p { color:rgba(255,255,255,.72); }
+    .score-dial { width:220px; height:220px; display:grid; place-items:center; border-radius:50%; background:conic-gradient(var(--accent) calc(var(--score)*1%), rgba(255,255,255,.12) 0); margin:0 auto; }
+    .score-dial strong { width:154px; height:154px; display:grid; place-items:center; border-radius:50%; background:var(--ink); font-family:var(--font-display); font-size:54px; }
+    .audit-list { display:grid; gap:12px; }
+    .audit-list li { list-style:none; padding:18px; border:1px solid rgba(255,255,255,.14); border-radius:8px; background:rgba(255,255,255,.05); }
+    .estimator { background:var(--soft); }
+    .estimator-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,.8fr); gap:28px; align-items:start; }
+    .calculator { padding:24px; border:1px solid var(--line); border-radius:8px; background:white; }
+    label { display:block; font-size:13px; letter-spacing:.06em; text-transform:uppercase; font-weight:700; margin:18px 0 8px; }
+    input[type=range] { width:100%; accent-color:var(--accent); }
+    .estimate-result { padding:30px; background:var(--ink); color:white; border-radius:8px; }
+    .estimate-result strong { display:block; font-family:var(--font-display); font-size:58px; letter-spacing:-.02em; }
+    .process { background:white; }
+    .process-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; padding:0; margin:0; counter-reset:step; }
+    .process-step { list-style:none; padding:24px; border-top:2px solid var(--accent); background:var(--soft); border-radius:0 0 8px 8px; }
+    .process-step strong { font-family:var(--font-display); font-size:24px; }
+    .faq-section { background:var(--paper); }
+    .faq-item { border-top:1px solid var(--line); }
+    .faq-toggle { width:100%; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 0; background:none; border:0; color:var(--ink); text-align:left; font:650 18px var(--font-body); cursor:pointer; }
+    .faq-toggle svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; transition:transform .18s ease; }
+    .faq-item p { display:none; max-width:760px; margin:0 0 22px; color:var(--muted); }
+    .faq-item.open p { display:block; }
+    .faq-item.open svg { transform:rotate(180deg); }
+    .final-cta { background:var(--ink); color:white; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; align-items:center; }
+    .final-cta h2 { font-family:var(--font-display); font-size:clamp(32px,5vw,60px); line-height:1.05; margin:0; letter-spacing:-.02em; }
+    .mobile-sticky { display:none; position:fixed; left:12px; right:12px; bottom:12px; z-index:30; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .28s ease, transform .28s ease; }
+    .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto!important; transition:none!important; animation:none!important; } .reveal { opacity:1; transform:none; } }
+    @media (max-width: 900px) {
+      .hero, .audit, .estimator-grid, .final-cta { grid-template-columns:1fr; }
+      .service-grid, .process-list, .proof-strip { grid-template-columns:1fr; }
+      .nav-links a:not(.nav-cta) { display:none; }
+      .mobile-sticky { display:flex; }
+      .hero { min-height:auto; padding-top:46px; }
+      .before-after-slider { min-height:360px; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <p>Demo website voor Vlaamse groei</p>
-    <h1>Tuinaanleg / buitenrenovatie dat vertrouwen wekt en aanvragen oplevert</h1>
-    <p>Een fictief voorbeeld van hoe een moderne website voor uw sector eruit kan zien.</p>
-    <a class="cta" href="tel:+32123456789">Vraag uw offerte aan</a>
+  <nav class="site-nav" aria-label="Hoofdnavigatie">
+    <a class="brand" href="#top">Tuinaanleg / buitenrenovatie</a>
+    <div class="nav-links">
+      <a href="#diensten">Diensten</a>
+      <a href="#audit">Website-audit</a>
+      <a href="#aanvraag">Aanvraag</a>
+      <a class="nav-cta" href="tel:+3230000000">Vraag uw offerte aan</a>
+    </div>
+  </nav>
+  <header class="hero" id="top" data-od-id="hero">
+    <div>
+      <h1>Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow</h1>
+      <p class="hero-copy">Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek.</p>
+      <div class="hero-actions">
+        <a class="cta" href="#aanvraag">Vraag uw offerte aan</a>
+        <a class="cta ghost" href="#audit">Bekijk de website-aanpak</a>
+      </div>
+      <div class="proof-strip" aria-label="Bewijs">
+        <div><strong>37</strong><span>controlepunten voor vertrouwen, SEO en conversie</span></div>
+        <div><strong>4</strong><span>stappen van eerste bezoek naar aanvraag</span></div>
+        <div><strong>90</strong><span>seconden om het aanbod te begrijpen</span></div>
+      </div>
+    </div>
+    <figure class="site-visual" aria-label="Visuele intake voor buitenruimte">
+      <div class="browser-bar"><i></i><i></i><i></i></div>
+      <div class="before-after-slider">
+        <div class="site-pane before">
+          <strong>Voor</strong>
+          <div class="mini-line"></div><div class="mini-line short"></div>
+          <div class="mini-card">Onduidelijke diensten, weinig bewijs, verborgen contact.</div>
+          <div class="mini-line"></div><div class="mini-line"></div><div class="mini-line short"></div>
+        </div>
+        <div class="site-pane after" id="afterPane">
+          <strong>Na</strong>
+          <div class="mini-card"><strong>Visuele intake voor buitenruimte</strong><br>Heldere route naar de juiste aanvraag.</div>
+          <div class="mini-line"></div>
+          <div class="mini-card">Van losse foto&#x27;s naar stijl, oppervlak, timing en offertecontext.</div>
+        </div>
+        <input class="slider-control" id="comparisonSlider" type="range" min="28" max="82" value="58" aria-label="Vergelijk voor en na">
+      </div>
+    </figure>
   </header>
   <main>
-    <section class="grid">
-      <div class="panel"><h2>Duidelijke diensten</h2><p>Bezoekers zien meteen waarvoor ze bij u terechtkunnen.</p></div>
-      <div class="panel"><h2>Lokaal vertrouwen</h2><p>Reviews, realisaties en bewijs maken de stap naar contact kleiner.</p></div>
-      <div class="panel"><h2>Mobiel contact</h2><p>Telefoneren of een aanvraag sturen kan zonder zoeken.</p></div>
+    <section class="services" id="diensten" data-od-id="seo-services">
+      <div class="section-head reveal">
+        <h2>Tuinaanleg / buitenrenovatie met pagina's die Google en klanten begrijpen</h2>
+        <p>Voor tuinaannemers die hun realisaties beter willen laten verkopen. De structuur koppelt lokale zoekintentie aan bewijs, proces en een concrete aanvraag.</p>
+      </div>
+      <div class="service-grid">
+        
+        <article class="service-card reveal">
+          <span>01</span>
+          <h3>Tuinontwerp</h3>
+          <p>Meer aanvragen met stijlrichting</p>
+        </article>
+        
+
+        <article class="service-card reveal">
+          <span>02</span>
+          <h3>Terrassen</h3>
+          <p>Betere gesprekken over budget</p>
+        </article>
+        
+
+        <article class="service-card reveal">
+          <span>03</span>
+          <h3>Opritten</h3>
+          <p>Sterker bewijs via realisaties</p>
+        </article>
+        
+
+        <article class="service-card reveal">
+          <span>04</span>
+          <h3>Onderhoud</h3>
+          <p>Meer aanvragen met stijlrichting</p>
+        </article>
+        
+      </div>
     </section>
-    <section>
-      <h2>Gebouwd voor aanvragen</h2>
-      <p>Deze demo toont een rustige, professionele structuur met sterke CTA's en heldere copy in Vlaams Nederlands.</p>
-      <a class="cta" href="mailto:info@example.be">Contacteer ons</a>
+    <section class="audit" id="audit" data-od-id="website-audit">
+      <div class="section-head reveal">
+        <h2>Een website-audit die zichtbaar maakt waarom bezoekers afhaken</h2>
+        <p>De score kijkt niet alleen naar mooi design, maar naar vindbaarheid, mobiele helderheid, contactfrictie en vertrouwen boven de vouw.</p>
+      </div>
+      <div>
+        <div class="score-dial" style="--score:84"><strong data-count="84">0</strong></div>
+        <ul class="audit-list">
+          <li><strong>SEO-basis:</strong> unieke titel, meta description, diensten en lokale context.</li>
+          <li><strong>Conversie:</strong> duidelijke telefoonknop, offerteflow en FAQ voor bezwaren.</li>
+          <li><strong>Vertrouwen:</strong> bewijs, werkwijze en taal die past bij Vlaamse klanten.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="estimator" id="aanvraag" data-od-id="request-estimator">
+      <div class="section-head reveal">
+        <h2>Interactieve aanvraag die betere leads oplevert</h2>
+        <p>Laat bezoekers hun situatie inschatten. Het resultaat is geen loze gimmick: het gesprek start met context.</p>
+      </div>
+      <div class="estimator-grid">
+        <form class="calculator" id="requestEstimator">
+          <label for="urgency">Urgentie</label>
+          <input id="urgency" name="urgency" type="range" min="1" max="5" value="3">
+          <label for="scope">Projectgrootte</label>
+          <input id="scope" name="scope" type="range" min="1" max="5" value="4">
+          <label for="proof">Nood aan bewijs</label>
+          <input id="proof" name="proof" type="range" min="1" max="5" value="3">
+        </form>
+        <aside class="estimate-result">
+          <span>Leadkwaliteit</span>
+          <strong id="estimateScore">72</strong>
+          <p id="estimateText">Sterke aanvraag: contacteer binnen de werkdag en vraag gericht naar timing en bewijs.</p>
+          <a class="cta" href="mailto:info@example.be">Vraag uw offerte aan</a>
+        </aside>
+      </div>
+    </section>
+    <section class="process" data-od-id="process">
+      <div class="section-head reveal">
+        <h2>Van eerste bezoek naar vertrouwen in vier stappen</h2>
+        <p>Een goede website verkoopt niet harder. Ze maakt de juiste volgende stap vanzelfsprekend.</p>
+      </div>
+      <ol class="process-list">
+        
+        <li class="process-step reveal">
+          <strong>Stijl en ruimte</strong>
+          <p>Stijl en ruimte wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+        </li>
+        
+
+        <li class="process-step reveal">
+          <strong>Budgetrichting</strong>
+          <p>Budgetrichting wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+        </li>
+        
+
+        <li class="process-step reveal">
+          <strong>Ontwerp</strong>
+          <p>Ontwerp wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+        </li>
+        
+
+        <li class="process-step reveal">
+          <strong>Uitvoering</strong>
+          <p>Uitvoering wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+        </li>
+        
+      </ol>
+    </section>
+    <section class="faq-section" data-od-id="faq">
+      <div class="section-head reveal">
+        <h2>Vragen die twijfelende klanten eerst beantwoord willen zien</h2>
+        <p>FAQ's zijn geen opvulling. Ze halen bezwaren weg net voor de contactknop.</p>
+      </div>
+      
+        <div class="faq-item">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>Kan de site visueel genoeg zijn?</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <p>Ja. Realisaties en stijlkeuzes krijgen veel ruimte.</p>
+        </div>
+        
+
+        <div class="faq-item">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>Kan budget subtiel gevraagd worden?</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <p>Ja. Met bandbreedtes zonder bezoekers af te schrikken.</p>
+        </div>
+        
+
+        <div class="faq-item">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>Werkt dit voor onderhoud?</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <p>Ja. Onderhoud krijgt eigen route naast aanleg.</p>
+        </div>
+        
+
+        <div class="faq-item">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>Waarom een estimator?</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <p>Omdat stijl, oppervlakte en timing de offertekwaliteit bepalen.</p>
+        </div>
+        
+    </section>
+    <section class="final-cta" data-od-id="final-cta">
+      <h2>Maak van uw website een eerste verkoopgesprek.</h2>
+      <a class="cta" href="mailto:info@example.be">Vraag uw offerte aan</a>
     </section>
   </main>
+  <a class="cta mobile-sticky" href="tel:+3230000000">Vraag uw offerte aan</a>
+  <script>
+    const afterPane = document.getElementById('afterPane');
+    const comparisonSlider = document.getElementById('comparisonSlider');
+    comparisonSlider?.addEventListener('input', event => {
+      afterPane.style.width = `${event.target.value}%`;
+    });
+
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const open = item.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+    });
+
+    const estimator = document.getElementById('requestEstimator');
+    const estimateScore = document.getElementById('estimateScore');
+    const estimateText = document.getElementById('estimateText');
+    function updateEstimate() {
+      if (!estimator) return;
+      const values = [...estimator.querySelectorAll('input')].map(input => Number(input.value));
+      const score = 42 + values.reduce((sum, value) => sum + value, 0) * 4;
+      estimateScore.textContent = String(score);
+      estimateText.textContent = score > 88
+        ? 'Topaanvraag: bel snel, vraag concrete timing en verwijs naar relevant bewijs.'
+        : score > 68
+          ? 'Sterke aanvraag: contacteer binnen de werkdag en vraag gericht naar timing en bewijs.'
+          : 'Oriënterende lead: stuur een duidelijke vervolgvraag en toon een vergelijkbare case.';
+    }
+    estimator?.addEventListener('input', updateEstimate);
+    updateEstimate();
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .25 });
+    reveals.forEach(item => observer.observe(item));
+  </script>
 </body>
 </html>
