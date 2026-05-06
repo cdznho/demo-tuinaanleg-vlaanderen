@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow | Conversiegerichte website</title>
-  <meta name="description" content="Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek. SEO-structuur, bewijs, mobiele CTA en aanvraagflow voor Antwerpen, Waasland, Kempen en Vlaamse randgemeenten.">
+  <title>Tuinaanleg Antwerpen met visuele plannen en duidelijke uitvoering | Tuinaanleg / buitenrenovatie in Vlaanderen</title>
+  <meta name="description" content="Groenhof Tuinen ontwerpt en realiseert terrassen, opritten en tuinen met aandacht voor stijl, onderhoud en seizoensplanning. Diensten, realisaties, werkwijze en offerte-aanvraag voor Antwerpen, Waasland, Kempen en Vlaamse randgemeenten.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow">
-  <meta property="og:description" content="Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LandscapingBusiness", "name": "Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow", "areaServed": "Antwerpen, Waasland, Kempen en Vlaamse randgemeenten", "address": {"@type": "PostalAddress", "addressLocality": "Antwerpen", "addressCountry": "BE"}, "telephone": "+32 3 000 00 00", "url": "https://cdznho.github.io/demo-tuinaanleg-vlaanderen/", "description": "Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek.", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tuinaanleg / buitenrenovatie", "itemListElement": [{"@type": "Offer", "name": "Tuinontwerp"}, {"@type": "Offer", "name": "Terrassen"}, {"@type": "Offer", "name": "Opritten"}, {"@type": "Offer", "name": "Onderhoud"}]}}</script>
+  <meta property="og:title" content="Tuinaanleg Antwerpen met visuele plannen en duidelijke uitvoering">
+  <meta property="og:description" content="Groenhof Tuinen ontwerpt en realiseert terrassen, opritten en tuinen met aandacht voor stijl, onderhoud en seizoensplanning.">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LandscapingBusiness", "name": "Tuinaanleg Antwerpen met visuele plannen en duidelijke uitvoering", "areaServed": "Antwerpen, Waasland, Kempen en Vlaamse randgemeenten", "address": {"@type": "PostalAddress", "addressLocality": "Antwerpen", "addressCountry": "BE"}, "telephone": "+32 3 000 00 00", "url": "https://cdznho.github.io/demo-tuinaanleg-vlaanderen/", "description": "Groenhof Tuinen ontwerpt en realiseert terrassen, opritten en tuinen met aandacht voor stijl, onderhoud en seizoensplanning.", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tuinaanleg / buitenrenovatie", "itemListElement": [{"@type": "Offer", "name": "Tuinontwerp"}, {"@type": "Offer", "name": "Terrassen"}, {"@type": "Offer", "name": "Opritten"}, {"@type": "Offer", "name": "Onderhoud"}]}}</script>
   <style>
     :root {
       --ink: #172417;
@@ -39,6 +39,7 @@
     .proof-strip strong { display:block; font-family:var(--font-display); font-size:34px; letter-spacing:-.02em; }
     .proof-strip span { color:var(--muted); font-size:13px; line-height:1.4; }
     .site-visual { background:#111814; color:white; border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:18px; box-shadow:0 28px 80px rgba(17,24,20,.28); }
+    .hero-photo { width:100%; aspect-ratio:16/9; display:block; object-fit:cover; border-radius:6px; margin-bottom:14px; filter:saturate(.92) contrast(1.03); }
     .browser-bar { display:flex; gap:6px; padding-bottom:14px; }
     .browser-bar i { width:10px; height:10px; border-radius:50%; background:#f4c86a; }
     .browser-bar i:first-child { background:#e86f5d; }
@@ -63,12 +64,12 @@
     .service-card { min-height:230px; padding:24px; border:1px solid var(--line); border-radius:8px; background:linear-gradient(180deg,#fff,var(--soft)); }
     .service-card span { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:700; }
     .service-card h3 { font-family:var(--font-display); font-size:25px; line-height:1.1; margin:42px 0 12px; letter-spacing:-.01em; }
-    .audit { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:32px; align-items:center; background:var(--ink); color:white; }
-    .audit .section-head p { color:rgba(255,255,255,.72); }
+    .projects { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:32px; align-items:center; background:var(--ink); color:white; }
+    .projects .section-head p { color:rgba(255,255,255,.72); }
     .score-dial { width:220px; height:220px; display:grid; place-items:center; border-radius:50%; background:conic-gradient(var(--accent) calc(var(--score)*1%), rgba(255,255,255,.12) 0); margin:0 auto; }
     .score-dial strong { width:154px; height:154px; display:grid; place-items:center; border-radius:50%; background:var(--ink); font-family:var(--font-display); font-size:54px; }
-    .audit-list { display:grid; gap:12px; }
-    .audit-list li { list-style:none; padding:18px; border:1px solid rgba(255,255,255,.14); border-radius:8px; background:rgba(255,255,255,.05); }
+    .project-list { display:grid; gap:12px; }
+    .project-list li { list-style:none; padding:18px; border:1px solid rgba(255,255,255,.14); border-radius:8px; background:rgba(255,255,255,.05); }
     .estimator { background:var(--soft); }
     .estimator-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,.8fr); gap:28px; align-items:start; }
     .calculator { padding:24px; border:1px solid var(--line); border-radius:8px; background:white; }
@@ -94,7 +95,7 @@
     .reveal.is-visible { opacity:1; transform:translateY(0); }
     @media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto!important; transition:none!important; animation:none!important; } .reveal { opacity:1; transform:none; } }
     @media (max-width: 900px) {
-      .hero, .audit, .estimator-grid, .final-cta { grid-template-columns:1fr; }
+      .hero, .projects, .estimator-grid, .final-cta { grid-template-columns:1fr; }
       .service-grid, .process-list, .proof-strip { grid-template-columns:1fr; }
       .nav-links a:not(.nav-cta) { display:none; }
       .mobile-sticky { display:flex; }
@@ -108,193 +109,194 @@
     <a class="brand" href="#top">Tuinaanleg / buitenrenovatie</a>
     <div class="nav-links">
       <a href="#diensten">Diensten</a>
-      <a href="#audit">Website-audit</a>
+      <a href="#projecten">Realisaties</a>
       <a href="#aanvraag">Aanvraag</a>
       <a class="nav-cta" href="tel:+3230000000">Vraag uw offerte aan</a>
     </div>
   </nav>
   <header class="hero" id="top" data-od-id="hero">
     <div>
-      <h1>Tuinaanleg Antwerpen met visuele plannen en duidelijke offerteflow</h1>
-      <p class="hero-copy">Een tuinsite die stijl, budget, onderhoud en timing capteert voor een beter eerste gesprek.</p>
+      <h1>Tuinaanleg Antwerpen met visuele plannen en duidelijke uitvoering</h1>
+      <p class="hero-copy">Groenhof Tuinen ontwerpt en realiseert terrassen, opritten en tuinen met aandacht voor stijl, onderhoud en seizoensplanning.</p>
       <div class="hero-actions">
         <a class="cta" href="#aanvraag">Vraag uw offerte aan</a>
-        <a class="cta ghost" href="#audit">Bekijk de website-aanpak</a>
+        <a class="cta ghost" href="#projecten">Bekijk realisaties</a>
       </div>
       <div class="proof-strip" aria-label="Bewijs">
-        <div><strong>37</strong><span>controlepunten voor vertrouwen, SEO en conversie</span></div>
-        <div><strong>4</strong><span>stappen van eerste bezoek naar aanvraag</span></div>
-        <div><strong>90</strong><span>seconden om het aanbod te begrijpen</span></div>
+        <div><strong>18</strong><span>jaar ervaring met klanten in Vlaanderen</span></div>
+        <div><strong>4</strong><span>duidelijke stappen van vraag tot oplevering</span></div>
+        <div><strong>24u</strong><span>reactie bij dringende vragen</span></div>
       </div>
     </div>
     <figure class="site-visual" aria-label="Visuele intake voor buitenruimte">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&amp;fit=crop&amp;w=1400&amp;q=82" alt="Tuinaanleg / buitenrenovatie praktijkbeeld">
       <div class="browser-bar"><i></i><i></i><i></i></div>
       <div class="before-after-slider">
         <div class="site-pane before">
-          <strong>Voor</strong>
+          <strong>Voor de aanpak</strong>
           <div class="mini-line"></div><div class="mini-line short"></div>
-          <div class="mini-card">Onduidelijke diensten, weinig bewijs, verborgen contact.</div>
+          <div class="mini-card">Onvolledige informatie, losse vragen en onduidelijke prioriteit.</div>
           <div class="mini-line"></div><div class="mini-line"></div><div class="mini-line short"></div>
         </div>
         <div class="site-pane after" id="afterPane">
-          <strong>Na</strong>
-          <div class="mini-card"><strong>Visuele intake voor buitenruimte</strong><br>Heldere route naar de juiste aanvraag.</div>
+          <strong>Na de aanpak</strong>
+          <div class="mini-card"><strong>Visuele intake voor buitenruimte</strong><br>Correct voorbereid, helder opgevolgd en klaar voor de volgende stap.</div>
           <div class="mini-line"></div>
-          <div class="mini-card">Van losse foto&#x27;s naar stijl, oppervlak, timing en offertecontext.</div>
+          <div class="mini-card">Kies stijl, oppervlakte en timing voor een gericht tuinvoorstel.</div>
         </div>
-        <input class="slider-control" id="comparisonSlider" type="range" min="28" max="82" value="58" aria-label="Vergelijk voor en na">
+        <input class="slider-control" id="comparisonSlider" type="range" min="28" max="82" value="58" aria-label="Vergelijk ruwe vraag met duidelijke aanpak">
       </div>
     </figure>
   </header>
   <main>
-    <section class="services" id="diensten" data-od-id="seo-services">
+    <section class="services" id="diensten" data-od-id="services">
       <div class="section-head reveal">
-        <h2>Tuinaanleg / buitenrenovatie met pagina's die Google en klanten begrijpen</h2>
-        <p>Voor tuinaannemers die hun realisaties beter willen laten verkopen. De structuur koppelt lokale zoekintentie aan bewijs, proces en een concrete aanvraag.</p>
+        <h2>Tuinaanleg / buitenrenovatie met duidelijke diensten en opvolging</h2>
+        <p>Buitenruimte die mooi oogt, praktisch werkt en correct wordt aangelegd. U krijgt uitleg in mensentaal, heldere afspraken en opvolging die op papier staat.</p>
       </div>
       <div class="service-grid">
         
         <article class="service-card reveal">
           <span>01</span>
           <h3>Tuinontwerp</h3>
-          <p>Meer aanvragen met stijlrichting</p>
+          <p>Tuinontwerp dat past bij uw leven</p>
         </article>
         
 
         <article class="service-card reveal">
           <span>02</span>
           <h3>Terrassen</h3>
-          <p>Betere gesprekken over budget</p>
+          <p>Duidelijke materiaalkeuzes</p>
         </article>
         
 
         <article class="service-card reveal">
           <span>03</span>
           <h3>Opritten</h3>
-          <p>Sterker bewijs via realisaties</p>
+          <p>Onderhoudsvriendelijke oplevering</p>
         </article>
         
 
         <article class="service-card reveal">
           <span>04</span>
           <h3>Onderhoud</h3>
-          <p>Meer aanvragen met stijlrichting</p>
+          <p>Tuinontwerp dat past bij uw leven</p>
         </article>
         
       </div>
     </section>
-    <section class="audit" id="audit" data-od-id="website-audit">
+    <section class="projects" id="projecten" data-od-id="projects">
       <div class="section-head reveal">
-        <h2>Een website-audit die zichtbaar maakt waarom bezoekers afhaken</h2>
-        <p>De score kijkt niet alleen naar mooi design, maar naar vindbaarheid, mobiele helderheid, contactfrictie en vertrouwen boven de vouw.</p>
+        <h2>Recente tuinprojecten met materiaalkeuzes en planning</h2>
+        <p>Buitenruimtes worden ontworpen rond gebruik, stijl, onderhoud en correcte uitvoering.</p>
       </div>
       <div>
-        <div class="score-dial" style="--score:84"><strong data-count="84">0</strong></div>
-        <ul class="audit-list">
-          <li><strong>SEO-basis:</strong> unieke titel, meta description, diensten en lokale context.</li>
-          <li><strong>Conversie:</strong> duidelijke telefoonknop, offerteflow en FAQ voor bezwaren.</li>
-          <li><strong>Vertrouwen:</strong> bewijs, werkwijze en taal die past bij Vlaamse klanten.</li>
+        <div class="score-dial" style="--score:92"><strong>4.8</strong></div>
+        <ul class="project-list">
+          <li><strong>Waasland:</strong> terras en afwatering vernieuwd met onderhoudsvriendelijke materialen.</li>
+<li><strong>Antwerpen:</strong> tuinontwerp vertaald naar duidelijke fasering en beplanting.</li>
+<li><strong>Kempen:</strong> oprit aangelegd met aandacht voor waterdoorlaatbaarheid.</li>
         </ul>
       </div>
     </section>
-    <section class="estimator" id="aanvraag" data-od-id="request-estimator">
+    <section class="estimator" id="aanvraag" data-od-id="quote-estimator">
       <div class="section-head reveal">
-        <h2>Interactieve aanvraag die betere leads oplevert</h2>
-        <p>Laat bezoekers hun situatie inschatten. Het resultaat is geen loze gimmick: het gesprek start met context.</p>
+        <h2>Vraag een tuinvoorstel aan</h2>
+        <p>Stijl, oppervlakte en timing helpen om ontwerp, materiaalkeuzes en uitvoering goed in te schatten.</p>
       </div>
       <div class="estimator-grid">
-        <form class="calculator" id="requestEstimator">
-          <label for="urgency">Urgentie</label>
+        <form class="calculator" id="quoteEstimator">
+          <label for="urgency">Timing</label>
           <input id="urgency" name="urgency" type="range" min="1" max="5" value="3">
-          <label for="scope">Projectgrootte</label>
+          <label for="scope">Buitenruimte</label>
           <input id="scope" name="scope" type="range" min="1" max="5" value="4">
-          <label for="proof">Nood aan bewijs</label>
+          <label for="proof">Foto&#x27;s beschikbaar</label>
           <input id="proof" name="proof" type="range" min="1" max="5" value="3">
         </form>
         <aside class="estimate-result">
-          <span>Leadkwaliteit</span>
+          <span>Eerste prioriteit</span>
           <strong id="estimateScore">72</strong>
-          <p id="estimateText">Sterke aanvraag: contacteer binnen de werkdag en vraag gericht naar timing en bewijs.</p>
+          <p id="estimateText">Plan een plaatsbezoek met budgetrichting en materiaalvoorkeuren.</p>
           <a class="cta" href="mailto:info@example.be">Vraag uw offerte aan</a>
         </aside>
       </div>
     </section>
     <section class="process" data-od-id="process">
       <div class="section-head reveal">
-        <h2>Van eerste bezoek naar vertrouwen in vier stappen</h2>
-        <p>Een goede website verkoopt niet harder. Ze maakt de juiste volgende stap vanzelfsprekend.</p>
+        <h2>Zo verloopt een samenwerking</h2>
+        <p>Geen verrassingen: we werken met duidelijke stappen, vaste communicatie en opvolging tot alles afgerond is.</p>
       </div>
       <ol class="process-list">
         
         <li class="process-step reveal">
           <strong>Stijl en ruimte</strong>
-          <p>Stijl en ruimte wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+          <p>In deze fase maken we afspraken helder, bevestigen we de timing en zorgen we dat u weet wat de volgende stap is.</p>
         </li>
         
 
         <li class="process-step reveal">
           <strong>Budgetrichting</strong>
-          <p>Budgetrichting wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+          <p>In deze fase maken we afspraken helder, bevestigen we de timing en zorgen we dat u weet wat de volgende stap is.</p>
         </li>
         
 
         <li class="process-step reveal">
           <strong>Ontwerp</strong>
-          <p>Ontwerp wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+          <p>In deze fase maken we afspraken helder, bevestigen we de timing en zorgen we dat u weet wat de volgende stap is.</p>
         </li>
         
 
         <li class="process-step reveal">
           <strong>Uitvoering</strong>
-          <p>Uitvoering wordt vertaald naar duidelijke microcopy, bewijs en een concrete volgende stap.</p>
+          <p>In deze fase maken we afspraken helder, bevestigen we de timing en zorgen we dat u weet wat de volgende stap is.</p>
         </li>
         
       </ol>
     </section>
     <section class="faq-section" data-od-id="faq">
       <div class="section-head reveal">
-        <h2>Vragen die twijfelende klanten eerst beantwoord willen zien</h2>
-        <p>FAQ's zijn geen opvulling. Ze halen bezwaren weg net voor de contactknop.</p>
+        <h2>Veelgestelde vragen</h2>
+        <p>Antwoorden op de vragen die klanten meestal stellen voor ze een plaatsbezoek plannen.</p>
       </div>
       
         <div class="faq-item">
           <button class="faq-toggle" type="button" aria-expanded="false">
-            <span>Kan de site visueel genoeg zijn?</span>
+            <span>Maken jullie ook een ontwerp?</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <p>Ja. Realisaties en stijlkeuzes krijgen veel ruimte.</p>
+          <p>Ja. We starten met stijl, gebruik, onderhoud en budgetrichting.</p>
         </div>
         
 
         <div class="faq-item">
           <button class="faq-toggle" type="button" aria-expanded="false">
-            <span>Kan budget subtiel gevraagd worden?</span>
+            <span>Doen jullie terrassen en opritten?</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <p>Ja. Met bandbreedtes zonder bezoekers af te schrikken.</p>
+          <p>Ja. Terras, oprit, beplanting en afwatering kunnen samen gepland worden.</p>
         </div>
         
 
         <div class="faq-item">
           <button class="faq-toggle" type="button" aria-expanded="false">
-            <span>Werkt dit voor onderhoud?</span>
+            <span>Kan ik onderhoud laten opnemen?</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <p>Ja. Onderhoud krijgt eigen route naast aanleg.</p>
+          <p>Ja. Onderhoud kan apart of als nazorg bij aanleg worden ingepland.</p>
         </div>
         
 
         <div class="faq-item">
           <button class="faq-toggle" type="button" aria-expanded="false">
-            <span>Waarom een estimator?</span>
+            <span>Wanneer plan ik best een tuinproject?</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <p>Omdat stijl, oppervlakte en timing de offertekwaliteit bepalen.</p>
+          <p>Hoe vroeger de voorbereiding start, hoe beter de uitvoering in het seizoen past.</p>
         </div>
         
     </section>
     <section class="final-cta" data-od-id="final-cta">
-      <h2>Maak van uw website een eerste verkoopgesprek.</h2>
+      <h2>Een vraag over uw project? We bekijken het graag.</h2>
       <a class="cta" href="mailto:info@example.be">Vraag uw offerte aan</a>
     </section>
   </main>
@@ -314,19 +316,24 @@
       });
     });
 
-    const estimator = document.getElementById('requestEstimator');
+    const estimator = document.getElementById('quoteEstimator');
     const estimateScore = document.getElementById('estimateScore');
     const estimateText = document.getElementById('estimateText');
+    const quoteTexts = {
+      low: "Oriënterende tuinvraag: stuur foto's, oppervlakte en gewenste stijl.",
+      mid: "Plan een plaatsbezoek met budgetrichting en materiaalvoorkeuren.",
+      high: "Project snel ingepland krijgen: bezorg foto's, afmetingen en gewenste timing."
+    };
     function updateEstimate() {
       if (!estimator) return;
       const values = [...estimator.querySelectorAll('input')].map(input => Number(input.value));
       const score = 42 + values.reduce((sum, value) => sum + value, 0) * 4;
       estimateScore.textContent = String(score);
       estimateText.textContent = score > 88
-        ? 'Topaanvraag: bel snel, vraag concrete timing en verwijs naar relevant bewijs.'
+        ? quoteTexts.high
         : score > 68
-          ? 'Sterke aanvraag: contacteer binnen de werkdag en vraag gericht naar timing en bewijs.'
-          : 'Oriënterende lead: stuur een duidelijke vervolgvraag en toon een vergelijkbare case.';
+          ? quoteTexts.mid
+          : quoteTexts.low;
     }
     estimator?.addEventListener('input', updateEstimate);
     updateEstimate();
